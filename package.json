@@ -1,0 +1,24 @@
+{
+  "name": "potato",
+  "version": "1.1.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "r3tr0",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "discord.js": "github:discordjs/discord.js",
+    "discord.js-commando": "github:discordjs/Commando",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-static": "^4.2.7",
+    "fluent-ffmpeg": "^2.1.2",
+    "node-opus": "^0.3.3",
+    "simple-youtube-api": "^5.2.1",
+    "youtube-search": "^1.1.4",
+    "yt-search": "^2.3.3",
+    "ytdl-core": "^3.4.2"
+  }
+}
