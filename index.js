@@ -1,19 +1,19 @@
 const Discord = require('discord.js');
-const ytdl = require('ytdl-core');
-const yts = require('yt-search');
-const { startsWith } = require('ffmpeg-static');
-const YOUTUBE_API = 'AIzaSyAPMLZQm9Ki3sfSUeD2AZPpy2x-Nt0SNaI';
-const search = require('youtube-search');
-const opts = {
-    maxRequests: 25,
-    key: YOUTUBE_API,
-    type: 'video'
-};
-const prefix = '~';
+//const ytdl = require('ytdl-core');
+//const yts = require('yt-search');
+//const { startsWith } = require('ffmpeg-static');
+//const YOUTUBE_API = 'AIzaSyAPMLZQm9Ki3sfSUeD2AZPpy2x-Nt0SNaI';
+//const search = require('youtube-search');
+//const opts = {
+//    maxRequests: 25,
+//    key: YOUTUBE_API,
+//    type: 'video'
+//};
+const prefix = '>';
 const version = '2.4';
 
 const client = new Discord.Client();
-const queue = new Map();
+//const queue = new Map();
 const bot = new Discord.Client();
 
 
@@ -44,7 +44,7 @@ client.on('guildMemberRemove', member => {
 bot.on('guildMemberAdd', member =>{
 
     console.log.apply('User '+member.user.username+' has joined the server!')
-    var role = member.guild.roles.find('name', '𝖜𝖊𝖊𝖇');
+    var role = member.guild.roles.find('name', 'human');
     member.addRole(role)
 })
 
@@ -55,7 +55,7 @@ client.on("message", async message => {
     if(!message.content.startsWith(prefix)) return;
     const serverQueue = queue.get(message.guild.id);
 
-    if(message.content.startsWith(`${prefix}play`)){
+    /*if(message.content.startsWith(`${prefix}play`)){
         execute(message, serverQueue);
         return;
     }
@@ -63,9 +63,9 @@ client.on("message", async message => {
     else if(message.content.startsWith(`${prefix}skip`)){
         skip(message, serverQueue);
         return;
-    }
+    }*/
 
-    else if(message.content.startsWith(`${prefix}clear`)){
+    if(message.content.startsWith(`${prefix}clear`)){
 
         const args = message.content.slice(prefix.length).trim().split(' ');
         const command = args.shift().toLocaleLowerCase();
@@ -128,7 +128,7 @@ client.on("message", async message => {
         message.channel.send('Data for character analysis has been stored in your dataset folder.')
     }
 
-    else if(message.content.startsWith(`${prefix}search`)){
+    /*else if(message.content.startsWith(`${prefix}search`)){
         let embed = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setDescription("Enter a search query.")
@@ -164,7 +164,7 @@ client.on("message", async message => {
 
         message.channel.send(embed);
     }
-    }
+    }*/
     
     else if(message.content.startsWith(`${prefix}kill`)){
         const args = message.content.slice(prefix.length).trim().split(' ');
@@ -396,7 +396,7 @@ client.on("message", async message => {
         message.channel.send(action);
 
         const song = new Discord.MessageEmbed()
-        .setColor('RANDOM')
+        /*.setColor('RANDOM')
         .setTitle(`Music commands : `)
         .addFields(
             {name: 'Play music', value: `~play (song name)`},
@@ -412,7 +412,7 @@ client.on("message", async message => {
         .addFields(
             {name: 'Search google', value: `~google (search string)`},
             {name: 'search youtube', value: `~search (search string)`}
-        )
+        )*/
         message.channel.send(search);
     }
 
@@ -426,7 +426,7 @@ client.on("message", async message => {
 
 });
 
-async function execute(message, serverQueue){
+/*async function execute(message, serverQueue){
     const args = message.content.split(" ");
     const voiceChannel = message.member.voice.channel;
     
@@ -509,6 +509,6 @@ function play(guild, song){
     .on("error", error => console.error(error));
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
     serverQueue.textChannel.send(`Start playing : **${song.title}**`);
-}
+}*/
 
-client.login(process.env.token);
+client.login('NzY4NTIxNTcyOTEwMzY2NzMw.X5BrfQ.Y1SYPG9KgRhtqeB-KFPDDSk8YL0');
