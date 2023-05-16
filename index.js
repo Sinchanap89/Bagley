@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 //const ytdl = require('ytdl-core');
 //const yts = require('yt-search');
 //const { startsWith } = require('ffmpeg-static');
-//const YOUTUBE_API = 'AIzaSyAPMLZQm9Ki3sfSUeD2AZPpy2x-Nt0SNaI';
+//const YOUTUBE_API = '';
 //const search = require('youtube-search');
 //const opts = {
 //    maxRequests: 25,
@@ -511,4 +511,4 @@ function play(guild, song){
     serverQueue.textChannel.send(`Start playing : **${song.title}**`);
 }*/
 
-client.login('NzY4NTIxNTcyOTEwMzY2NzMw.X5BrfQ.Y1SYPG9KgRhtqeB-KFPDDSk8YL0');
+client.login('');
