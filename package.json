@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "r3tr0",
+  "author": "retro",
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
